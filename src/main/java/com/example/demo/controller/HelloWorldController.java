@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.entity.UserInfo;
 import com.example.demo.service.UserInfoService;
 
+
 @Controller
 public class HelloWorldController {
 
@@ -69,10 +70,9 @@ public class HelloWorldController {
 	        return "list";
 	    }
 
-	    
 	    /*添加完用户后重定向到list页面*/
 	    @PostMapping("/saveI")
-	    public String saveI(@ModelAttribute UserInfo userInfo){
+	    public String saveI(UserInfo userInfo){
 	        userInfoService.insert(userInfo);
 	     	System.out.println("跳转页面以前");
 	     	//userInfo.setBirthday(new Date());
