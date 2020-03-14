@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>springboot-thymeleaf demo</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<form th:action="@{/saveU}" method="post" >
+
+<div><label for="name">姓名：</label>
+<input type="text" id="userName" name="name" th:field="${userInfo.userName}">
+</div>
+<div><label for="birthday">生日：</label>
+<input type="date"  id="birthday" name="birthday" th:field="${userInfo.birthday}">
+</div>
+<div><label for="sex">性别：</label>
+<input type="text" id="sex" name="sex" th:field="${userInfo.sex}">
+</div>
+<div><label for="address">地址：</label>
+<input type="text" id="address" name="address" th:field="${userInfo.address}">
+</div>
+<div><label for="age">年龄：</label>
+<input type="number" id="age" name="age" th:field="${userInfo.age}">
+</div>
+<div><label for="userPassword">密码：</label>
+<input type="text" id="userPassword" name="userPassword" th:field="${userInfo.userPassword}">
+</div>
+<div>
+<a th:href="@{/saveU}"><input class="btn btn-primary" type="submit" value="提交"/></a>
+</div>
+</form>
+<div>
+<a href="update.html" th:href="@{/update}"><input class="btn btn-primary" type="reset" value="重置"/></a>
+</div>
+
+<div>
+<a href="list.html" th:href="@{/list}"><input class="btn btn-primary" type="button" value="返回"/></a>
+</div>
+</body>
+</html>
