@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-
+@Slf4j
 @Controller
 public class HelloWorldController {
 
@@ -70,15 +70,16 @@ public class HelloWorldController {
     }
 
     @RequestMapping("/add")
-    public ModelAndView selectAll() {
-        return new ModelAndView("add");
+    public String add() {
+        return "add";
     }
 
     /*添加完用户后重定向到list页面*/
     @PostMapping("/saveI")
     public String saveI(UserInfo userInfo) {
         userInfoService.insert(userInfo);
-        System.out.println("跳转页面以前");
+        log.info("跳转页面以前");
+//        System.out.println("跳转页面以前");
         //userInfo.setBirthday(new Date());
         System.out.println(userInfo.getBirthday());
         return "redirect:/selectAll";
