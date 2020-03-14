@@ -69,7 +69,7 @@ public class HelloWorldController {
         return "list";
     }
 
-    @RequestMapping("/selectAll")
+    @RequestMapping("/add")
     public ModelAndView selectAll() {
         return new ModelAndView("add");
     }
