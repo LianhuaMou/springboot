@@ -68,15 +68,7 @@ public class HelloWorldController {
 	        model.addAttribute("users",list);
 	        return "list";
 	    }
-	 
-	 /*添加用户页面*/
-	    @RequestMapping("/add")
-	    public String addUser(Model model){
-	    	System.out.println("add的方法");
-	    	model.addAttribute("userInfo",new UserInfo());
-	    	System.out.println("跳转页面以前");
-	        return "add";
-	    }
+
 	    
 	    /*添加完用户后重定向到list页面*/
 	    @PostMapping("/saveI")
